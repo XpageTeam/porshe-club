@@ -1,0 +1,61 @@
+.default-btn
+	display: inline-flex
+	align-items: center
+	white-space: nowrap
+	border-radius: 5px
+	border: 1px solid var(--main-color)
+	font-weight: 500
+	transition: background-color .4s ease, color .4s ease, border-color .4s ease
+	padding: em(14) em(29) em(16)
+	line-height: inherit
+	cursor: pointer
+
+	svg
+		fill: currentColor
+		flex: none
+
+	path
+
+		&[stroke]
+			stroke: currentColor
+
+		&[fill]
+			fill: currentColor
+
+	> svg
+
+		&:first-child
+			margin-right: 12px
+
+		&:last-child
+			margin-left: 12px
+
+	&:not(&--bordered)
+		color: #fff var(--main-color)
+
+		&:hover, &:focus
+
+			&:not(:active)
+				background-color: lighten(#307376, .1)
+
+	&--bordered
+		color: #fff
+		border-color: var(--border-color)
+
+		&:hover, &:focus
+
+			&:not(:active)
+				background-color: var(--main-color)
+				border-color: transparent
+
+	&--loading
+
+		svg
+			animation: loading 1s linear infinite
+
+@keyframes loading
+	0%
+		transform: rotateZ(0deg)
+		
+	100%
+		transform: rotateZ(360deg)

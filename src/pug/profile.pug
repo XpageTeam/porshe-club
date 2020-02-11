@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Проект
+		include inc/head.pug
+		include inc/css.pug
+	body.main.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__title
+					.wrapper
+						.title-block
+							h1.title-block__title Проект
+				.inner-content__content
+					.wrapper
+						.profile
+							.profile__data
+								.prof
+									figure.prof__img
+										img(src="img/photos/profile-img.jpg")
+									figcaption.prof__about
+										span.prof__about-name Чуракаев
+											br
+											| Ильдар Мансурович
+										span.prof__about-pos Founder digital agency Xpage
+									.prof__contacts
+										.p-contacts
+											.p-contacts__item
+												.p-contacts__item-title ТЕЛЕФОН
+												address.p-contacts__item-text
+													a(href="tel: +7 (925) 700 37 78") +7 (925) 700 37 78
+											.p-contacts__item
+												.p-contacts__item-title e-mail
+												address.p-contacts__item-text
+													a(href="mailto: ildar.churakaev@xpage.ru") ildar.churakaev@xpage.ru
+											.p-contacts__item
+												.p-contacts__item-title facebook 
+												address.p-contacts__item-text
+													a(href="#") churakaev
+											.p-contacts__item
+												.p-contacts__item-title  instagram
+												address.p-contacts__item-text
+													a(href="#") churakaev
+							.profile__about
+								.p-about
+									.p-about__me
+										.p-about__text
+											.p-about__text-title Обо мне
+											.p-about__text-text
+												p Ищем партнера в сфере инновационных материалов для изготовления документов. Предполагаемое качество материалов: износостойкость, приятность на ощупь, презентабельный внешний вид, возможность прошивки данными). 
+									.p-about__auto
+										.p-about__text
+											.p-about__text-title Автомобиль
+											.p-about__text-text
+												p Porsche Macan
+									.p-about__slider
+										.about-slider
+											.about-slider__arrows
+												.swiper-button-prev
+												.swiper-button-next
+											.swiper-wrapper
+												.swiper-slide
+													a.about-slider__slide(href="img/photos/about-slide-img.jpg" data-fancybox="about-slider")
+														img(src="img/photos/about-slide-img.jpg")
+												.swiper-slide
+													a.about-slider__slide(href="img/photos/proj-img-0.jpg" data-fancybox="about-slider")
+														img(src="img/photos/proj-img-0.jpg")
+												.swiper-slide
+													a.about-slider__slide(href="img/photos/proj-img-2.jpg" data-fancybox="about-slider")
+														img(src="img/photos/proj-img-2.jpg")
+		include inc/footer.pug
+		include inc/scripts.pug

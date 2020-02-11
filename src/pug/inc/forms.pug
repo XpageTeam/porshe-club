@@ -1,0 +1,151 @@
+.popup#print-stats
+	.popup__title Распечатать статистику
+	.popup__content
+		form(action="#")
+			.form__inputs
+				.form__inputs-input
+					.default-input
+						.default-input__inputs
+							.default-input
+								select.default-input__input.default-input__input--select
+									- for (let i = 1; i <= 31; i++)
+										option(value=i)=i
+							.default-input
+								select.default-input__input.default-input__input--select
+									option(value="0") Январь
+									option(value="1") Январь
+									option(value="2") Январь
+									option(value="3") Январь
+									option(value="4") Январь
+									option(value="5") Январь
+						label.default-input__label С какой даты
+				.form__inputs-input
+					.default-input
+						.default-input__inputs
+							.default-input
+								select.default-input__input.default-input__input--select
+									- for (let i = 1; i <= 31; i++)
+										option(value=i)=i
+							.default-input
+								select.default-input__input.default-input__input--select
+									option(value="0") Январь
+									option(value="1") Январь
+									option(value="2") Январь
+									option(value="3") Январь
+									option(value="4") Январь
+									option(value="5") Январь
+						label.default-input__label По какою дату
+				.form__inputs-input
+					.default-input
+						select.default-input__input.default-input__input--select
+							option(value="0") Неделя
+							option(value="1") День
+							option(value="2") Месяц
+							option(value="3") Год
+						label.default-input__label Статистика за период 
+			.form__submit
+				.form__submit-btn
+					input.default-btn(type="submit" value="Распечатать статистику")
+.popup#log-in
+	.popup__title Войти в аккаунт
+	.popup__content
+		form(action="#")
+			.form__inputs
+				.form__inputs-input
+					.default-input
+						input.default-input__input(type="text" required="" placeholder="Admin")
+						label.default-input__label Логин
+						.default-input__error
+							.error-text <!-- текст ошибки -->
+				.form__inputs-input
+					.default-input
+						input.default-input__input(type="password" required="" placeholder="*********")
+						label.default-input__label Пароль
+						.default-input__error
+							.error-text <!-- текст ошибки -->
+				.form__inputs-input
+
+					.captcha
+						.captcha-input
+							.default-input
+								input.default-input__input(type="text" required="" placeholder="Введите код с картинки")
+								label.default-input__label Введите код с картинки
+								.default-input__error
+									.error-text <!-- текст ошибки -->
+						.captcha-img
+							img(src="img/captcha.jpg")
+				.form__submit-btn
+					input.default-btn(type="submit" value="Войти в аккаунт")
+				.form__submit-text
+					p Забыли пароль? Вы можете его 
+						a(href="#") восставновить
+.popup#add-user
+	.popup__title Добавить сотрудника
+	.popup__content
+		form(action="#")
+			.form__inputs
+				.form__inputs-input
+					.default-input
+						input.default-input__input(type="text" required="" placeholder="Admin" value="Дмитрий Жердев")
+						label.default-input__label Фио
+						.default-input__error
+							.error-text <!-- текст ошибки -->
+				.form__inputs-input
+					.default-input
+						input.default-input__input(type="text" required="" placeholder="Руководитель отдела разработки" value="Руководитель отдела разработки")
+						label.default-input__label Должность
+						.default-input__error
+							.error-text <!-- текст ошибки -->
+				.form__inputs-input
+					.default-input
+						select.default-input__input.default-input__input--select
+							option(value="0") Отдел разработки
+							option(value="1") Отдел разработки
+							option(value="2") Отдел разработки
+							option(value="3") Отдел разработки
+							option(value="4") Отдел разработки
+						label.default-input__label Подразделение
+						.default-input__error
+							.error-text <!-- текст ошибки -->
+				.form__inputs-input
+					.default-input
+						input.default-input__input.default-input__input--file(type="file" id="file" multiple="")
+						.default-input__input-filetext
+							input.default-input__input(type="text" placeholder="Прикрепите фотографии" readonly="")
+							label.default-input__label--file(for="file")
+						label.default-input__label Фотографии для распознования
+					.ue-photos__list
+						.photos-list
+							.photos-list__item
+								.p-item
+									figure.p-item__img
+										img(src="img/photos/removable-img.jpg")
+									a.p-item__remove(href="#")
+							.photos-list__item
+								.p-item
+									figure.p-item__img
+										img(src="img/photos/removable-img.jpg")
+									a.p-item__remove(href="#")
+							.photos-list__item
+								.p-item
+									figure.p-item__img
+										img(src="img/photos/removable-img.jpg")
+									a.p-item__remove(href="#")
+							.photos-list__item
+								.p-item
+									figure.p-item__img
+										img(src="img/photos/removable-img.jpg")
+									a.p-item__remove(href="#")
+									.p-item__loader
+										.p-item__loader-bar
+											.p-item__loader-progress(style="transform: scaleX(.75)")
+											<!-- от 0 до 1 -->
+				.form__btns
+					.form__btns-item
+						.file-btn
+							input.file-btn__input(type="file" id="fileb-btn")
+							label.default-btn.default-btn--bordered(for="fileb-btn")
+								include ../../img/ico-doc.svg
+								span.default-btn__text Загрузить из документа
+					.form__btns-item
+						input.default-btn(type="submit" value="Добавить") 

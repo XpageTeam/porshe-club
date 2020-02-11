@@ -1,0 +1,23 @@
+.news-item
+	border-top: 1px solid var(--border-color)
+	padding: 32px 0 35px 
+	display: flex
+	align-items: center
+	
+	&__arrow
+		margin-left: auto
+		background: url("../img/ico-arrow.svg") center right no-repeat
+		width: 40px
+		min-height: 20px
+		// align-self: start
+
+	&__date
+		width: 95px
+		margin-right: 60px
+
+	&__date, &__title
+		font-size: em(18)
+		line-height: calc(26 / 18)
+
+	&__title
+		margin-right: 20px

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Медиа
+		include inc/head.pug
+		include inc/css.pug
+	body.main.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__title
+					.wrapper
+						.title-block
+							h1.title-block__title Медиа
+				.inner-content__content
+					.wrapper
+						.media-list
+							- for (let j = 0; j < 3; j++)
+								- for (let i = 0; i < 3; i++)
+									.media-list__item
+										.media-item
+											a.media-item__img(href="#")
+												img(src="img/photos/media-img-"+i+".jpg")
+											.media-item__date 8 марта 2019
+											.media-item__desc
+												.media-item__desc-title 
+													a(href="#") Porsche Club Moscow Golf Cup 2017
+												.media-item__desc-type Репортаж
+						.more-btn__container
+							a.default-btn.default-btn--more(href="#") 
+								| <!-- подставить класс default-btn--loading при загрузке -->
+								span.default-btn__text Показать ещё
+								include ../img/ico-update.svg
+		include inc/footer.pug
+		include inc/scripts.pug

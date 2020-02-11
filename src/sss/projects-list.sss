@@ -1,0 +1,40 @@
+.projects-list
+
+	&__item
+
+		&:not(:first-child)
+			margin: 90px 0 0
+
+.project-item
+	display: grid
+	grid-template-areas: "img title" "img text" "img btn"
+	grid-template-rows: auto 1fr auto
+	grid-template-columns: 370px 1fr
+	gap: 25px 59px
+
+	&__img
+		grid-area: img
+
+		img
+			display: block
+
+	&__title
+		grid-area: title
+		font-size: em(20)
+		line-height: calc(28 / 20)
+		max-width: 635px
+
+		a
+			border: none
+
+			&:not(:hover, :focus)
+				color: inherit
+
+	&__text
+		grid-area: text
+		max-width: 635px
+		line-height: 174%
+
+	&__btn
+		grid-area: btn
+		margin-top: auto

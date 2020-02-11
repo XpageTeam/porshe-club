@@ -1,0 +1,107 @@
+.profile
+
+	&__about
+		margin: 70px 0 0
+
+.prof
+	display: grid
+	grid-template-areas: "img about" "img contacts"
+	grid-template-columns: auto 1fr
+	grid-template-rows: auto 1fr
+	gap: 30px 60px
+
+	&__img
+		grid-area: img
+
+		img
+			display: block
+
+	&__about
+		grid-area: about
+		display: flex
+		align-items: flex-start
+		flex-direction: column
+
+		&-name
+			font-size: em(20)
+			margin: 0 0 15px
+
+		&-pos
+			color: #393939
+
+	&__contacts
+		grid-area: contacts
+		margin-top: auto
+
+.p-contacts
+	border-top: 1px solid var(--border-color)
+	border-bottom: 1px solid var(--border-color)
+	display: flex
+	padding-top: 35px
+
+	&__item
+		margin-bottom: 35px
+
+		&:not(:last-child)
+			margin-right: 80px
+
+		&-title
+			text-transform: uppercase
+			color: #393939
+			font-size: 12px
+			margin-bottom: 7px
+
+		&-text
+			
+			a
+				color: #fff
+
+.p-about
+	display: grid
+	grid-template-areas: "me slider" "auto slider"
+	grid-template-columns: 1fr 370px
+	grid-template-rows: 1fr auto
+	gap: 30px
+
+	&__me
+		grid-area: me
+
+	&__me &__text
+		font-size: em(19)
+
+	&__auto
+		grid-area: auto
+
+	&__slider
+		grid-area: slider
+
+	&__text
+
+		&-title
+			text-transform: uppercase
+			font-size: 12px
+			color: #393939
+			margin: 0 0 15px
+
+		&-text
+			line-height: calc(36 / 19)
+			max-width: 666px
+
+.about-slider
+	position: relative
+
+	&__arrows
+		position: absolute * * 20px 25px
+		display: flex
+
+		.swiper-button
+
+			&-prev, &-next
+				position: static
+				margin: 0
+				background: url("../img/ico-swiper-arrow.svg") center no-repeat
+				size: 40px
+
+			&-prev
+				// margin-right: 10px
+				transform: rotateZ(180deg)
