@@ -1,0 +1,20 @@
+.members-list
+	
+	&:last-child
+		// margin: 0 0 -100px
+
+	&__item
+		padding: em(70) 0 em(65)
+
+		&:first-child
+			padding-top: 0
+
+		&:nth-child(even)
+			position: relative
+
+			&:before
+				content: ""
+				position: absolute 0 * 0 50%
+				transform: translateX(-50%)
+				background: #000
+				width: 100vw

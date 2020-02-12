@@ -70,5 +70,28 @@ html(lang="ru")
 												.swiper-slide
 													a.about-slider__slide(href="img/photos/proj-img-2.jpg" data-fancybox="about-slider")
 														img(src="img/photos/proj-img-2.jpg")
+					.profile__projects
+						.fullwidth-title
+							.wrapper
+								.fullwidth-title__text Проекты
+						.wrapper
+							.profile__projects-list
+								.projects-list
+									- for (let j = 0; j < 2; j++)
+										- for (let i = 0; i < 3; i++)
+											.projects-list__item
+												.project-item
+													a.project-item__img(href="#")
+														img(src="img/photos/proj-img-"+i+".jpg")
+													.project-item__title
+														a(href="#") Название проекта Porsche Club
+															br
+															| Moscow Golf Cup 2017
+													.project-item__text
+														p Ищем партнера в сфере инновационных материалов для изготовления документов. Предполагаемое качество материалов : износостойкость, приятность на ощупь, презентабельный внешний вид, возможность прошивки данными). 
+													.project-item__btn
+														a.default-btn.default-btn--bordered(href="#")
+															span.default-btn__text Подробнее
+															include ../img/ico-btn-arrow.svg
 		include inc/footer.pug
 		include inc/scripts.pug

@@ -10,9 +10,16 @@
 
 	&__submit
 		margin: 24px 0 0
+		display: flex
+		align-items: center
 
 		&-btn
 			text-align: center
+			margin-right: 33px
+
+		&-text
+			font-size: em(13)
+			line-height: 164%
 
 	&__inputs
 		display: flex
@@ -76,6 +83,7 @@
 
 textarea.default-input__input
 
+
 	&:not(.default-input__input--textarea)
 		max-height: 57px
 		resize: none
@@ -103,18 +111,18 @@ textarea.default-input__input
 				margin-right: 16px
 
 	&__input
-		border: 1px solid var(--border-color)
-		border-radius: 5px
+		border: none
+		border-bottom: 1px solid var(--border-color)
+		background: none
 		font-size: em(14)
-		color: inherit #fff
-		size: 100% 53px
+		size: 100% 45px
 		transition: border-color .3s ease
 
 		&:not(&--select)
 			padding: 17px 16px
 
 		&:not(.default-input__input--textarea)
-			max-height: 53px
+			max-height: 45px
 
 		&--error
 

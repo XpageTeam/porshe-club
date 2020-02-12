@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Контакты
+		include inc/head.pug
+		include inc/css.pug
+	body.main.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__title
+					.wrapper
+						.title-block
+							h1.title-block__title Контакты
+				.inner-content__content
+					.wrapper
+						.contacts
+							.contacts__list
+								.c-list
+									.c-list__item
+										.contacts-item
+											figure.contacts-item__img
+												img(src="img/ico-phone.svg")
+											.contacts-item__text
+												.contacts-item__text-title Телефон
+												address.contacts-item__text-text 
+													a(href="tel: +7 925 710 6 911") +7 925 710 6 911
+									.c-list__item
+										.contacts-item
+											figure.contacts-item__img
+												img(src="img/ico-mail.svg")
+											.contacts-item__text
+												.contacts-item__text-title E-mail
+												address.contacts-item__text-text
+													a(href="mailto: club@porsche-club-Chelyabinsk.ru") club@porsche-club-Chelyabinsk.ru
+							.contacts__form
+								.contacts-form
+									.contacts-form__title Форма обратной связи
+									.contacts-form__form
+										form(action="#")
+											.form__inputs.form__inputs--2
+												.form__inputs-input
+													.default-input
+														input.default-input__input(type="text" required="")
+														label.default-input__label Имя
+												.form__inputs-input
+													.default-input
+														input.default-input__input(type="tel" required="")
+														label.default-input__label Телефон
+												.form__inputs-input
+													.default-input
+														textarea.default-input__input
+														label.default-input__label Имя
+												.form__inputs-input
+													.form__submit
+														.form__submit-btn
+															input.default-btn(type="submit")
+														.form__submit-text Нажимая кнопку, Вы даете информированное согласие на обработку своих 
+															a(href="#") персональных данных
+		include inc/footer.pug
+		include inc/scripts.pug

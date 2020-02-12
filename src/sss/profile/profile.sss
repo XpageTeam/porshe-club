@@ -1,0 +1,61 @@
+@import "prof.sss"
+
+.profile
+
+	&__about
+		margin: 70px 0 0
+
+	&__projects
+		margin: 63px 0 0
+
+.p-about
+	display: grid
+	grid-template-areas: "me slider" "auto slider"
+	grid-template-columns: 1fr 370px
+	grid-template-rows: 1fr auto
+	gap: 30px
+
+	&__me
+		grid-area: me
+
+	&__me &__text
+		font-size: em(19)
+
+	&__auto
+		grid-area: auto
+
+	&__slider
+		grid-area: slider
+
+	&__text
+
+		&-title
+			text-transform: uppercase
+			font-size: 12px
+			color: #393939
+			margin: 0 0 15px
+
+		&-text
+			line-height: calc(36 / 19)
+			max-width: 666px
+
+.about-slider
+	position: relative
+
+	&__arrows
+		position: absolute * * 20px 25px
+		display: flex
+
+		.swiper-button
+
+			&-prev, &-next
+				position: static
+				margin: 0
+				background: url("../img/ico-swiper-arrow.svg") center no-repeat
+				size: 40px
+
+			&-prev
+				transform: rotateZ(180deg)
+
+	img
+		display: block

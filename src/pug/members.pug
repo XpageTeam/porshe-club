@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Участники
+		include inc/head.pug
+		include inc/css.pug
+	body.main.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__title
+					.wrapper
+						.title-block
+							h1.title-block__title Участники
+				.inner-content__content
+					.wrapper
+						.members
+							.members__search
+								.search
+									form
+										.search__form
+											.search__form-input-container
+												input.search__form-input(type="search" placeholder="Чуракаев")
+												.search__results(style="display: none")
+													.s-res
+														.s-res__list
+															- for (let i = 0; i < 15; i++)
+																a.s-res__list-link(href="#") Черакаев Ильдар Мансурович
+											.search__form-btn
+												input.default-btn(type="submit" value="Найти участника")
+							.members__list
+								.members-list
+									- for (let i = 0; i <= 3; i++)
+										.members-list__item
+											.prof
+												figure.prof__img
+													img(src="img/photos/profile-img.jpg")
+												figcaption.prof__about
+													span.prof__about-name Чуракаев
+														br
+														| Ильдар Мансурович
+													span.prof__about-pos Founder digital agency Xpage
+												.prof__btn
+													a.default-btn.default-btn--bordered(href="#") Посмотреть профиль
+												.prof__contacts
+													.p-contacts
+														.p-contacts__item
+															.p-contacts__item-title ТЕЛЕФОН
+															address.p-contacts__item-text
+																a(href="tel: +7 (925) 700 37 78") +7 (925) 700 37 78
+														.p-contacts__item
+															.p-contacts__item-title e-mail
+															address.p-contacts__item-text
+																a(href="mailto: ildar.churakaev@xpage.ru") ildar.churakaev@xpage.ru
+														.p-contacts__item
+															.p-contacts__item-title facebook 
+															address.p-contacts__item-text
+																a(href="#") churakaev
+														.p-contacts__item
+															.p-contacts__item-title  instagram
+															address.p-contacts__item-text
+																a(href="#") churakaev
+		include inc/footer.pug
+		include inc/scripts.pug

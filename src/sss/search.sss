@@ -1,0 +1,70 @@
+.search
+	margin: 0 0 63px
+
+	&__form
+		display: flex
+
+		&-input
+			background: url("../img/ico-search.svg") center left 19px no-repeat
+			border: 1px solid var(--border-color)
+			color: #fff
+			padding: 10px 20px 10px 50px
+			border-radius: 5px
+			width: 100%
+			flex: 1 0 auto
+
+			&-container
+				flex: 1 1 auto
+				position: relative
+				display: flex
+				flex-direction: column
+
+			&:focus
+				border-color: var(--main-color)
+
+			&::-webkit-search-decoration,
+			&::-webkit-search-cancel-button,
+			&::-webkit-search-results-button,
+			&::-webkit-search-results-decoration
+				display: none
+
+		&-btn
+			flex: none
+			margin-left: 28px
+
+	&__results
+		position: absolute calc(100% - 1px) 0 *
+		z-index: 2
+
+.s-res
+	border: 1px solid var(--border-color)
+	background: var(--body-bg-color)
+	padding: 20px 0
+
+	&__list
+		max-height: 350px
+		overflow-y: auto
+
+		&::-webkit-scrollbar
+			width: 20px
+
+			&-track
+				background: #0C3234
+				border-left: 9px solid var(--body-bg-color)
+				border-right: 9px solid var(--body-bg-color)
+
+			&-thumb
+				background: var(--main-color)
+				border-left: 8px solid var(--body-bg-color)
+				border-right: 8px solid var(--body-bg-color)
+
+		&-link
+			display: block
+			padding: 20px
+			transition: border-color .3s ease, background-color .3s ease
+
+			&:not(:last-child)
+				border-bottom: 1px solid var(--border-color)
+
+			&:hover
+				background-color: var(--main-color)
