@@ -7,3 +7,16 @@
 		letter-spacing: 0.1em
 		font-size: em(50)
 		line-height: calc(26 / 50)
+
+@media (max-width: 1000px)
+	.title-block
+		padding: 0 env(safe-area-inset-right) 0 env(safe-area-inset-left)
+
+		&__title
+			font-size: em(35)
+
+@media (max-width: 660px)
+	.title-block
+
+		&__title
+			font-size: em(25)

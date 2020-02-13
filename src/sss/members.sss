@@ -1,10 +1,6 @@
 .members-list
-	
-	&:last-child
-		// margin: 0 0 -100px
 
 	&__item
-		padding: em(70) 0 em(65)
 
 		&:first-child
 			padding-top: 0
@@ -18,3 +14,43 @@
 				transform: translateX(-50%)
 				background: #000
 				width: 100vw
+
+@media (min-width: 1400px)
+	.members-list
+
+		&__item
+			padding: em(70) 0 em(65)
+
+@media (max-width: 1400px) and (min-width: 660px)
+	.members-list
+
+		&__item
+			padding: em(40) 0
+
+@media (max-width: 1000px) and (min-width: 660px)
+	.members-list
+
+		.prof
+			grid-template-areas: "img about" "img contacts" "btn contacts"
+
+			&__btn
+				grid-area: btn
+				position: static
+
+				.default-btn
+					width: 100%
+					text-align: center
+					justify-content: center
+
+@media (max-width: 660px)
+	.members-list
+
+		&__item
+			padding: em(30) 0
+			
+			.prof
+				grid-template-areas: "img" "about" "contacts" "btn"
+
+				&__btn
+					grid-area: btn
+					position: static

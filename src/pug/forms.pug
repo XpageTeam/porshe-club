@@ -5,7 +5,7 @@ html(lang="ru")
 		title Формы
 		include inc/head.pug
 		include inc/css.pug
-	body.main.loading
+	body.inner.loading
 		include inc/header.pug
 		main#content
 			.inner-content
@@ -16,6 +16,11 @@ html(lang="ru")
 				.inner-content__content
 					.wrapper
 						div
-							
+							a.fancybox.default-btn(href="#log-in") Вход
+							br
+							br
+							br
+							a.fancybox.default-btn(href="#add-user") Заявка на регистрацию
 		include inc/footer.pug
+		include inc/forms.pug
 		include inc/scripts.pug

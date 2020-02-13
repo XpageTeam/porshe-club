@@ -21,3 +21,30 @@
 
 	&__title
 		margin-right: 20px
+
+
+@media (max-width: 1000px)
+	.news-item
+		padding: 25px 0
+		padding: 25px constant(safe-area-inset-right) 25px constant(safe-area-inset-left)
+		padding: 25px env(safe-area-inset-right) 25px env(safe-area-inset-left)
+
+		&__date
+			margin-right: 30px
+
+@media (max-width: 660px)
+	.news-item
+		padding-block: 20px
+		flex-wrap: wrap
+		position: relative
+
+		&__date
+			width: 100%
+			margin: 0 0 10px
+
+		&__title
+			max-width: calc(100% - 60px)
+
+			&:before
+				position: absolute 0
+				content: ""

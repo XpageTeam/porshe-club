@@ -1,0 +1,54 @@
+@media (min-width: 1000px)
+	.mobile-menu
+		display: none
+
+@media (max-width: 1000px)
+	.mobile-menu
+		position: fixed 0 * 0 100%
+		overflow: hidden
+		width: 280px
+		background: var(--body-bg-color)
+		z-index: 9
+		overflow: hidden
+
+		&:before
+			content: ""
+			position: absolute
+			box-shadow: 0 0 10px rgba(0,0,0,.7)
+			top: 0
+			bottom: 0
+			left: -.1rem
+			width: .1rem
+
+		&__contacts
+			padding: 40px 25px 30px
+			padding: 40px 25px constant(safe-area-inset-bottom)
+			padding: 40px 25px env(safe-area-inset-bottom)
+			margin-bottom: 20px
+			margin-top: auto
+
+		&__content
+			position: absolute 0
+			overflow-y: auto
+			flex-direction: column
+			display: flex
+			-webkit-overflow-scrolling: touch
+
+	#content, .fotoer, .head, .mobile-menu
+		transition: transform .3s ease
+
+	.js__menu-opened
+
+		#content, .fotoer, .head, .mobile-menu
+			transform: translate3d(-280px, 0, 0)
+
+	.m-menu
+
+		&__link
+			display: block
+			border-bottom: 1px solid var(--border-color)
+			padding: 20px 25px
+			font-size: em(16)
+
+			&.active
+				background: var(--main-color)

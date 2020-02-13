@@ -1,5 +1,7 @@
 .search
 	margin: 0 0 63px
+	padding: 0 constant(safe-area-inset-right) 0 constant(safe-area-inset-left)
+	padding: 0 env(safe-area-inset-right) 0 env(safe-area-inset-left)
 
 	&__form
 		display: flex
@@ -68,3 +70,19 @@
 
 			&:hover
 				background-color: var(--main-color)
+
+@media (max-width: 660px)
+	.search
+
+		&__form
+			display: block
+
+			&-btn
+				margin: 20px 0 0
+
+				.default-btn
+					width: 100%
+					justify-content: center
+
+			&-input
+				height: 55px

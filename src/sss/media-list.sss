@@ -1,11 +1,6 @@
 .media-list
 	display: flex
 	flex-wrap: wrap
-	margin: 0 0 -75px -45px
-
-	&__item
-		width: calc((100% - 45px * 3) / 3)
-		margin: 0 0 75px 45px
 
 .media-item
 	position: relative
@@ -43,3 +38,40 @@
 			margin: 8px 0 0
 			text-transform: uppercase
 			font-size: 12px
+
+@media (min-width: 1400px)
+	.media-list
+		margin: 0 0 -75px -45px
+
+		&__item
+			width: calc((100% - 45px * 3) / 3)
+			margin: 0 0 75px 45px
+
+@media (max-width: 1400px) and (min-width: 1000px)
+	.media-list
+		margin: 0 0 -35px -35px
+
+		&__item
+			width: calc((100% - 35px * 3) / 3)
+			margin: 0 0 35px 35px
+
+@media (max-width: 1000px)
+	.media-list
+		padding: 0 constant(safe-area-inset-right) 0 constant(safe-area-inset-left)
+		padding: 0 env(safe-area-inset-right) 0 env(safe-area-inset-left)
+
+@media (max-width: 1000px) and (min-width: 660px)
+	.media-list
+		margin: 0 0 -35px -35px
+
+		&__item
+			width: calc((100% - 35px * 2) / 2)
+			margin: 0 0 35px 35px
+
+@media (max-width: 660px)
+	.media-list
+
+		&__item
+
+			&:not(:first-child)
+				margin: 40px 0 0

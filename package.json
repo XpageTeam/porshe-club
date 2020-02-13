@@ -1,5 +1,5 @@
 {
-  "name": "lorena",
+  "name": "porsheclub",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -65,6 +65,7 @@
     "last 1 ie version"
   ],
   "dependencies": {
+    "imask": "^6.0.1",
     "jquery": "^3.4.1",
     "swiper": "^5.3.1"
   }

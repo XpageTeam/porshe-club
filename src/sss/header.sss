@@ -7,6 +7,7 @@
 		justify-content: space-between
 		max-width: 1781px
 		box-sizing: content-box
+		margin: 0 auto
 		padding: 57px 25px 60px
 
 .h-menu
@@ -31,7 +32,7 @@
 
 		&:after
 			content: ""
-			position: absolute calc(100% + 66px) -16px *
+			position: absolute calc(100% + 77px) -16px *
 			background: linear-gradient(270deg, #202020 0%, #FFFFFF 50%, #202020 100%)
 			height: 1px
 
@@ -61,3 +62,162 @@
 				text-stroke: 1px var(--body-text-color)
 				color: transparent
 				font-weight: 300
+
+.lc-btn
+	
+	svg
+		fill: none
+
+
+@media (min-width: 1000px)
+	.head__burger
+		display: none
+
+
+@media (max-width: 1400px) and (min-width: 1200px)
+	.head
+
+		&__wrap
+			padding: 30px 25px
+
+	.h-menu
+
+		&__link
+
+			&:after
+				top: calc(100% + 49px)
+
+@media (max-width: 1200px) and (min-width: 1000px)
+	.head
+		font-size: 14px
+
+		&__wrap
+			padding: 20px
+
+	.logo
+
+		&__text
+			font-size: em(24)
+
+	.h-menu
+
+		&__link
+
+			&:after
+				top: calc(100% + 37px)
+
+@media (max-width: 1200px)
+	.lc-btn
+
+		span
+			display: none
+
+		svg
+			margin: 0 !important
+
+@media (max-width: 1000px)
+	.head
+		padding: 20px
+		background: var(--main-color)
+		border: none
+		position: sticky
+		z-index: 10
+		top: 0
+		
+		&__wrap
+			padding: constant(safe-area-inset-top) constant(safe-area-inset-right) 0 constant(safe-area-inset-left)
+			padding: env(safe-area-inset-top) env(safe-area-inset-right) 0 env(safe-area-inset-left)
+
+		&__menu
+			display: none
+
+		&__logo
+			margin-right: auto
+
+		&__burger
+			margin-left: 20px
+
+			&.js__active
+
+				.burger
+
+					&:before, &:after
+						display: none
+
+					span
+						size: 100%
+						background: none
+						display: flex
+						flex-direction: column
+						justify-content: space-between
+
+						&:before, &:after
+							opacity: 1
+
+	.lc-btn
+		border: none
+	
+	.burger
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		align-items: flex-end
+		cursor: pointer
+		padding: 15px
+		margin: -15px
+		size: 30px 16px
+		box-sizing: content-box
+
+		&:before, &:after
+			content: ""
+			display: inline-block
+		
+		span, &:before, &:after
+			background: #ffffff
+			height: 2px
+			border-radius: 3px
+			transition: width .3s ease
+
+		&:before
+			width: 100%
+
+		span
+			width: 18px
+		
+		&:after
+			width: 21px
+	
+	.burger
+
+		span
+
+			&:before, &:after
+				content: ""
+				size: 100% 2px
+				background: #fff
+				transition: opacity .3s ease
+				opacity: 0
+
+			&:before
+				transform: translate3d(2px,7px,0) rotate(45deg)
+
+			&:after
+				transform: translate3d(2px,-7px,0) rotate(-45deg)
+
+@media (max-width: 660px)
+	.head
+
+		&__burger
+			margin-left: 10px
+
+	.logo
+
+		&__text
+			font-size: em(18)
+
+	.lc-btn
+		padding: 5px
+		display: block
+
+		svg
+			display: block

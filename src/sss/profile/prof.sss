@@ -3,7 +3,6 @@
 	grid-template-areas: "img about" "img contacts"
 	grid-template-columns: auto 1fr
 	grid-template-rows: auto 1fr
-	gap: 30px 60px
 	position: relative
 
 	&__btn
@@ -36,6 +35,7 @@
 	border-top: 1px solid var(--border-color)
 	border-bottom: 1px solid var(--border-color)
 	display: flex
+	flex-wrap: wrap
 	padding-top: 35px
 
 	&__item
@@ -54,3 +54,32 @@
 			
 			a
 				color: #fff
+
+@media (min-width: 1400px)
+	.prof
+		gap: 30px 60px
+
+@media (max-width: 1400px) and (min-width: 1000px)
+	.prof
+		gap: 20px 40px
+
+
+@media (max-width: 1000px)
+	.prof
+		gap: 20px 30px
+		grid-template-columns: 250px 1fr
+		// grid-template-areas: "img about" "contacts contacts"
+		padding: 0 constant(safe-area-inset-right) 0 constant(safe-area-inset-left)
+		padding: 0 env(safe-area-inset-right) 0 env(safe-area-inset-left)
+
+	.p-contacts
+		
+		&__item
+
+			&:not(:last-child)
+				margin-right: 30px
+
+@media (max-width: 660px)
+	.prof
+		grid-template-columns: 1fr
+		grid-template-areas: "img" "about" "contacts"

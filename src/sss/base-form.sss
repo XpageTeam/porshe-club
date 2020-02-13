@@ -1,27 +1,76 @@
-.popup
-	border-radius: 10px
-	padding: 30px 40px 40px !important
-	width: 430px
-	max-width: 100%
+.fancybox
 
-	&#add-user
-		width: 469px
+	&-is-open &-bg
+		opacity: 1
+
+	&-bg
+		background: linear-gradient(136.96deg, #4D6C6D 4.22%, rgba(0, 0, 0, 0) 103.39%), #0C0C0C
+
+	&-close-small
+		color: #fff
+
+.popup
+	background: #000
+	border-radius: 5px
+	padding: 65px 83px 80px !important
+	width: 560px
+	max-width: 100%
 
 	&__title
 		text-align: center
 		font-size: em(20)
-		line-height: calc(24 / 20)
-		color: #212121
-		margin: 0 0 30px
+		line-height: 146%
+		margin: 0 0 55px
+	
+	.form__btns
+		justify-content: center
 
-.captcha
-	display: flex
-	align-items: flex-end
 
-	&-input
-		margin-right: 16px
+.default-input__pass-toggler
+	position: absolute * 0 0 *
+	size: 30px 45px
+	background-position: center !important
+	cursor: pointer
 
-	&-img
+.default-input__input
 
-		img
-			display: block
+	&[type="password"]
+
+		~ .default-input__pass-toggler
+			background: url("../img/ico-pass.svg") center right no-repeat
+
+	&[type="text"]
+
+		~ .default-input__pass-toggler
+			background: url("../img/ico-pass-hide.svg") center right no-repeat
+
+
+.fancybox
+	
+	&-toolbar
+		padding: 0 constant(safe-area-inset-right) 0 constant(safe-area-inset-left)
+		padding: 0 env(safe-area-inset-right) 0 env(safe-area-inset-left)
+
+	&-button
+
+		&--arrow
+
+			&_left
+				margin-left: constant(safe-area-inset-left)
+				margin-left: env(safe-area-inset-left)
+
+			&_right
+				margin-right: constant(safe-area-inset-left)
+				margin-right: env(safe-area-inset-left)
+
+	&-thumbs
+		padding: 0 constant(safe-area-inset-right) 0 constant(safe-area-inset-left)
+		padding: 0 env(safe-area-inset-right) 0 env(safe-area-inset-left)
+
+@media (max-width: 1000px) and (min-width: 660px)
+	.popup
+		padding: 35px 40px !important
+
+@media (max-width: 660px)
+	.popup
+		padding: 20px !important

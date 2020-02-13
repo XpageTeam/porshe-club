@@ -115,11 +115,12 @@ textarea.default-input__input
 		border-bottom: 1px solid var(--border-color)
 		background: none
 		font-size: em(14)
+		color: #fff
 		size: 100% 45px
 		transition: border-color .3s ease
 
 		&:not(&--select)
-			padding: 17px 16px
+			padding: 10px 0
 
 		&:not(.default-input__input--textarea)
 			max-height: 45px
@@ -127,7 +128,7 @@ textarea.default-input__input
 		&--error
 
 			&:not(:focus, :valid)
-				color: var(--main-color)
+				color: #EB5757
 				border-color: currentColor
 
 				~ .default-input
@@ -139,11 +140,14 @@ textarea.default-input__input
 			border-color: var(--main-color)
 
 		&--select
-			padding: 10px 50px 10px 16px
+			padding: 10px 50px 10px 0
 			background-image: url("../img/ico-select-arrow.svg")
 			background-repeat: no-repeat
 			background-position: right 19px center
 			position: relative
+
+			option
+				color: #000
 
 			&:focus, &.js__opened
 				z-index: 2
@@ -182,11 +186,12 @@ textarea.default-input__input
 
 				&:after
 					content: "*"
-					color: red
+					display: inline-block
+					margin-left: 5px
 
 	&__label
 		font-size: em(12)
-		color: #919191
+		color: #fff
 		margin: 0 0 10px
 
 		&--file
@@ -195,10 +200,10 @@ textarea.default-input__input
 			cursor: pointer
 
 	&__error
-		position: absolute calc(100% + 10px) 0 * *
+		position: absolute 0 0 * *
 		font-size: em(12)
 		line-height: em(16)
-		color: var(--main-color)
+		color: #EB5757
 		trasition: opacity .3s ease
 		opacity: 0
 		pointer-events: none
@@ -233,27 +238,7 @@ textarea.default-input__input
 
 .popup
 	display: none
-	width: 821px
-	max-width: 100%
 	padding: 0 !important
-
-	--input-hor-spacing: 26px
-	--input-vert-spacing: 26px
-
-	&-form
-		background: #181818
-		padding: 50px 40px !important
-
-	.base-form
-
-		&__title
-			margin: 0 0 30px
-
-		&__submit
-			margin: 30px 0 0
-
-			br
-				display: none
 
 .modal-message
 	background: #181818
@@ -268,6 +253,11 @@ body
 			
 			option
 				color: #fff
+
+@media (max-width: 1000px)
+	:root
+		--input-hor-spacing: em(30)
+		--input-vert-spacing: em(20)
 
 @media (max-width: 660px)
 	.form__inputs

@@ -5,7 +5,7 @@ html(lang="ru")
 		title Контакты
 		include inc/head.pug
 		include inc/css.pug
-	body.main.loading
+	body.inner.loading
 		include inc/header.pug
 		main#content
 			.inner-content
@@ -46,12 +46,12 @@ html(lang="ru")
 														label.default-input__label Имя
 												.form__inputs-input
 													.default-input
-														input.default-input__input(type="tel" required="")
+														input.default-input__input.phone-input(type="tel" required="")
 														label.default-input__label Телефон
 												.form__inputs-input
 													.default-input
 														textarea.default-input__input
-														label.default-input__label Имя
+														label.default-input__label Текст сообщения
 												.form__inputs-input
 													.form__submit
 														.form__submit-btn

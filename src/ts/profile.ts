@@ -1,11 +1,14 @@
 import domReady from "./xpage/ready";
-import {Swiper, EffectFade, Navigation, Keyboard} from "swiper/js/swiper.esm"
 import App from "./xpage/core";
 
-Swiper.use([EffectFade, Navigation, Keyboard]);
-
-domReady(() => {
+domReady(async () => {
 	const aboutSliders = App.transformNodeListToArray(document.querySelectorAll(".about-slider"));
+
+	if (!aboutSliders.length) return;
+
+	const {Swiper, EffectFade, Navigation, Keyboard} = await import("swiper/js/swiper.esm");
+
+	Swiper.use([EffectFade, Navigation, Keyboard]);
 
 	for (const slider of aboutSliders)
 		new Swiper(slider, {

@@ -1,3 +1,21 @@
+aside.mobile-menu
+	.mobile-menu__content
+		nav.mobile-menu__menu
+			ul.m-menu
+				li
+					a.m-menu__link.marked(href="#") О клубе
+				li
+					a.m-menu__link.active(href="#") Проекты
+				li
+					a.m-menu__link(href="#") Участники
+				li
+					a.m-menu__link(href="#") Контакты
+		.mobile-menu__contacts
+			.m-contacts
+				address.m-contacts__phone
+					a(href="tel: +7 925 710 6 911") +7 925 710 6 911
+				address.m-contacts__mail
+					a(href="mailto: club@porsche-club-Chelyabinsk.ru") club@porsche-club-Chelyabinsk.ru
 header.head
 	.head__wrap
 		.head__logo
@@ -14,8 +32,11 @@ header.head
 				li
 					a.h-menu__link(href="#") Участники
 				li
-					a.h-menu__link(href="#") Контакты 
+					a.h-menu__link(href="#") Контакты
 		.head__lc
-			a.lc-btn(href="#") 
-				span.lc-btn__text Личный кабинет
+			a.lc-btn.default-btn.default-btn--bordered(href="#") 
+				span.default-btn__text Личный кабинет
 				include ../../img/ico-lc.svg
+		.head__burger
+			.burger
+				span

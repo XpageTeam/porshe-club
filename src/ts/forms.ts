@@ -25,4 +25,16 @@ domReady(() => {
 			}
 		})
 	})
-})
+});
+
+domReady(() => {
+	new EventListener(".default-input__pass-toggler").add("click", (el: HTMLElement) => {
+		const parent = el.closest(".default-input");
+
+		if (!parent) return;
+
+		const targetInput = parent.querySelector(".default-input__input") as HTMLInputElement;
+
+		targetInput.type = targetInput.type == "password" ? "text" : "password";
+	});
+});
