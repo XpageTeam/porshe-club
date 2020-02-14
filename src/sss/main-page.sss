@@ -1,0 +1,103 @@
+body.main
+
+	.head
+		position: absolute 0 0 *
+		border: none
+		padding: 44px 0 0
+
+		&__wrap
+			max-width: 1661px
+
+		&__logo
+			opacity: 0
+			width: 30px
+			overflow: hidden
+			pointer-events: none
+		
+	.h-menu
+
+		&__link
+
+			&:after
+				display: none
+
+			&.marked
+
+				&:before
+					display: none
+	
+	.footer
+		display: none
+
+
+.main-img
+	height: 100vh
+	display: block
+
+	img
+		size: 100%
+		display: block
+		object-fit: cover
+		margin: 0
+		object-position: center
+
+.main-title
+	position: absolute * 0 115px
+	padding: 0 20px
+	box-sizing: content-box
+	margin: 0 auto
+	max-width: 1661px
+
+	&__text
+		font-family: var(--title-font)
+		text-transform: uppercase
+		font-size: em(90)
+		line-height: 110%
+
+
+
+@media (min-width: 1000px)
+	body.main
+		
+		.head
+
+			&__logo
+				display: none
+
+		.lc-btn
+
+			&:not(:hover)
+				background: #000
+
+@media (max-width: 1600px) and (min-width: 1000px)
+	body.main .head
+		padding-top: 0 
+
+@media (max-width: 1600px)
+	.main-title
+		bottom: 65px
+
+@media (max-width: 1400px)
+	.main-title
+		padding-inline: 25px
+		bottom: 30px
+
+@media (max-width: 1000px)
+	body.main
+
+		.head
+			padding: 20px 20px 60px
+			background: linear-gradient(to bottom, rgba(0,0,0, .5), rgba(255,255,255, .00001))
+
+	.main-title
+
+		&__text
+			font-size: em(60)
+			padding: 0 constant(safe-area-inset-right) 0 constant(safe-area-inset-left)
+			padding: 0 env(safe-area-inset-right) 0 env(safe-area-inset-left)
+
+@media (max-width: 660px)
+	.main-title
+
+		&__text
+			font-size: em(26)

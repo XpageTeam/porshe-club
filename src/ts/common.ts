@@ -29,3 +29,10 @@ domReady(async () => {
         media: "(max-width: 1000px)"
 	})
 });
+
+function setViewportProperty(){
+    document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+}
+
+window.addEventListener('resize', setViewportProperty);
+setViewportProperty();

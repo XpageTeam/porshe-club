@@ -67,6 +67,9 @@
   "dependencies": {
     "imask": "^6.0.1",
     "jquery": "^3.4.1",
-    "swiper": "^5.3.1"
+    "postcss-viewport-height-correction": "^1.0.1",
+    "swiper": "^5.3.1",
+    "three": "^0.113.2",
+    "threejs-post-processing": "^1.0.0"
   }
 }

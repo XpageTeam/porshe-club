@@ -1,4 +1,5 @@
 import $ from "jquery";
+import "./404.js";
 
 window.jQuery = $
 window.$ = $

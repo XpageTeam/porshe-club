@@ -60,6 +60,7 @@ gulp.task("postcss", _ =>
 				functions: require("./config/postcss/functions.js")
 			}),
 			require("postcss-short"),
+			require('postcss-viewport-height-correction'),
 			require("postcss-preset-env")({
 				stage: 0
 			}),

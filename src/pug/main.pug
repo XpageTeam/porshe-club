@@ -8,6 +8,13 @@ html(lang="ru")
 	body.main.loading
 		include inc/header.pug
 		main#content
-			
+			picture.main-img
+				source(media="(min-width: 660px)" srcset="img/photos/main-big-img.jpg")
+				source(media="(max-width: 660px)" srcset="img/photos/main-small-img.png")
+				img
+			.main-title
+				.main-title__text Porsche 
+					br
+					| Club
 		include inc/footer.pug
 		include inc/scripts.pug
