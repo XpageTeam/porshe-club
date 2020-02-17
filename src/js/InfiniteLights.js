@@ -1,5 +1,7 @@
-console.log(POSTPROCESSING);
-class App {
+import * as THREE from "three/build/three.js";
+import * as POSTPROCESSING from "postprocessing/build/postprocessing.esm.js"
+
+export default class App {
   constructor(container, options = {}) {
     // Init ThreeJS Basics
     this.options = options;

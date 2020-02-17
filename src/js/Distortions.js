@@ -1,4 +1,4 @@
-/**
+import * as THREE from "three/build/three.js";/**
 
     Here on top you can find the uniforms for each distortion. 
 

@@ -1,11 +1,10 @@
 import * as THREE from "three/build/three.js";
-import POSTPROCESSING from "threejs-post-processing";
+import App from "./InfiniteLights.js";
 
-window.POSTPROCESSING = POSTPROCESSING;
-window.THREE = THREE;
+// window.POSTPROCESSING = POSTPROCESSING;
+// window.THREE = THREE;
 
 document.addEventListener("DOMContentLoaded", function(){
-	require("./InfiniteLights.js");
 	require("./Distortions.js");
 
 
@@ -72,6 +71,6 @@ document.addEventListener("DOMContentLoaded", function(){
 		}
 	};
 
-	const myApp = new THREE.App(container, options);
+	const myApp = new App(container, options);
 	myApp.loadAssets().then(myApp.init)
 });
