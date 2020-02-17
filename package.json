@@ -67,6 +67,7 @@
   ],
   "dependencies": {
     "imask": "^6.0.1",
+    "is_js": "^0.9.0",
     "jquery": "^3.4.1",
     "postprocessing": "^6.10.0",
     "swiper": "^5.3.1",

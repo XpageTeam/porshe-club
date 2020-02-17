@@ -1,5 +1,5 @@
 import $ from "jquery";
-import "./404.js";
+import is from "is_js";
 
 window.jQuery = $
 window.$ = $
@@ -7,6 +7,10 @@ window.$ = $
 require("./jquery.fancybox.js");
 
 document.addEventListener("DOMContentLoaded", function(){
+
+	if (!is.mobile())
+		import("./404.js");
+
 	$(".fancybox").fancybox({
 		trapFocus: false,
 		touch: false,
