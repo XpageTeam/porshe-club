@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Профиль
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__title
+					.wrapper
+						.title-block
+							h1.title-block__title Профиль
+				.inner-content__content
+					.wrapper
+						.lk
+							.lk__item
+								.lk__item-title
+									.lk-title
+										.lk-title__title Основная информация
+										.lk-title__btns
+											.lk-btns
+												.lk-btns__item
+													a.edit-btn(href="#") Редактировать
+												.lk-btns__item
+													a.default-btn.default-btn--bordered(href="#") Сохранить
+								.lk__item-content
+									form(action="#")
+										.lc-content
+											.lc-content__img
+												.lc-img
+													input.lc-img__input(type="file" disabled="")
+													.lc-img__remove
+														.remove-link
+													label.lc-img__label
+														span.lc-img__label-btn
+														span.lc-img__label-text Загрузить ещё
+													img.lc-img__img(src="img/photos/profile-img.jpg")
+											.lc-content__form
+												.lc-about
+													.form__inputs.form__inputs--2
+														.form__inputs-input
+															.default-input
+																input.default-input__input.default-input__input--error(type="text" required="" placeholder="Иванов Иван Иванович" disabled="")
+																label.default-input__label ФИО
+																.default-input__error
+																	.error-text 1232
+																.default-input__text Иванов Иван
+														.form__inputs-input
+															.default-input
+																input.default-input__input(type="text" placeholder="Founder" disabled="")
+																label.default-input__label Род деятельности
+																.default-input__text Founder
+														.form__inputs-input.form__inputs-input--2
+															.default-input
+																textarea.default-input__input(placeholder="Расскажите о себе" disabled="")
+																label.default-input__label О себе:
+																.default-input__text Расскажите о себе
+														.form__inputs-input
+															.default-input
+																input.default-input__input(type="text" placeholder="Porsche" disabled="")
+																label.default-input__label Автомобиль
+																.default-input__text Автомобиль
+														.form__inputs-input
+															.default-input
+																input.default-input__input.default-input__input--file(type="file" id="file" multiple="" disabled="")
+																.default-input__input_filetext
+																	input.default-input__input(type="text" readonly="" disabled="")
+																	label.default-input__label--file(for="file") Загрузить
+																label.default-input__label Фотографии автомобиля
+																span.default-input__req Допустимые размеры 50 Мб, jpg, png
+							.lk__item
+								.lk__item-title
+									.lk-title
+										.lk-title__title Контакты
+										.lk-title__btns
+											.lk-btns
+												.lk-btns__item
+													a.edit-btn(href="#") Редактировать
+												.lk-btns__item
+													a.default-btn.default-btn--bordered(href="#") Сохранить
+								.lk__item-content
+									form(action="#")
+										.lc-content
+											.lc-content__form
+												.lc-contacts
+													.form__inputs.form__inputs--4
+														.form__inputs-input
+															.default-input
+																input.default-input__input.phone-input(type="tel" required="" placeholder="+7 (351) 443 81 09" disabled="")
+																label.default-input__label Телефон
+																.default-input__error
+																	.error-text <!-- текст ошибки -->
+																.default-input__text Телефон
+														.form__inputs-input
+															.default-input
+																input.default-input__input(type="email" required="" placeholder="mail@mail.ru" disabled="")
+																label.default-input__label E-mail
+																.default-input__error
+																	.error-text <!-- текст ошибки -->
+																.default-input__text E-mail
+														.form__inputs-input
+															.default-input
+																input.default-input__input(type="text" required="" placeholder="Facebook" disabled="")
+																label.default-input__label Facebook
+																.default-input__error
+																	.error-text <!-- текст ошибки -->
+																.default-input__text Facebook
+														.form__inputs-input
+															.default-input
+																input.default-input__input(type="text" required="" placeholder="Instagram" disabled="")
+																label.default-input__label Instagram
+																.default-input__error
+																	.error-text <!-- текст ошибки -->
+																.default-input__text Instagram
+							.lk__item
+								.lk__item-title
+									.lk-title
+										.lk-title__title Проекты 
+										.lk-title__btns
+											.lk-btns
+												.lk-btns__item
+													a.edit-btn(href="#") Редактировать
+												.lk-btns__item
+													a.default-btn.default-btn--bordered(href="#") Сохранить
+								.lk__item-content
+									form(action="#")
+										.lc-content
+											.lc-content__img
+												.lc-img
+													input.lc-img__input(type="file" disabled="")
+													.lc-img__remove
+														.remove-link
+													label.lc-img__label
+														span.lc-img__label-btn
+														span.lc-img__label-text Загрузить ещё
+													img.lc-img__img(src="img/photos/profile-img.jpg")
+											.lc-content__form
+												.lc-project
+													.form__inputs.form__inputs--2
+														.form__inputs-input
+															.default-input
+																input.default-input__input(type="text" placeholder="Porsche Club Moscow Golf Cup 2017" disabled="")
+																label.default-input__label Название проекта
+																.default-input__text Название проекта
+														.form__inputs-input.form__inputs-input--2
+															.default-input
+																textarea.default-input__input.default-input__input--textarea(placeholder="Ищем партнера в сфере инновационных материалов для изготовления документов. Предполагаемое качество материалов : износостойкость, приятность на ощупь, презентабельный внешний вид, возможность прошивки данными)." disabled="")
+																label.default-input__label Текст проекта
+																.default-input__text Текст проекта
+										.lc-content
+											.lc-content__img
+												.lc-img
+													input.lc-img__input(type="file" disabled="")
+													.lc-img__remove
+														.remove-link
+													label.lc-img__label
+														span.lc-img__label-btn
+														span.lc-img__label-text Загрузить ещё
+													img.lc-img__img(src="img/photos/profile-img.jpg")
+											.lc-content__form
+												.lc-project
+													.form__inputs.form__inputs--2
+														.form__inputs-input
+															.default-input
+																input.default-input__input(type="text" placeholder="Porsche Club Moscow Golf Cup 2017" disabled="")
+																label.default-input__label Название проекта
+																.default-input__text Название проекта
+														.form__inputs-input.form__inputs-input--2
+															.default-input
+																textarea.default-input__input.default-input__input--textarea(placeholder="Ищем партнера в сфере инновационных материалов для изготовления документов. Предполагаемое качество материалов : износостойкость, приятность на ощупь, презентабельный внешний вид, возможность прошивки данными)." disabled="")
+																label.default-input__label Текст проекта
+																.default-input__text Текст проекта
+									//- a.add-project(href="#")
+									//- 	span.add-project__btn
+									//- 	span.add-project__text Добавить проект
+		include inc/footer.pug
+		include inc/scripts.pug

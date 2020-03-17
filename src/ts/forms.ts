@@ -38,3 +38,35 @@ domReady(() => {
 		targetInput.type = targetInput.type == "password" ? "text" : "password";
 	});
 });
+
+domReady(() => {
+	new EventListener(".lc-img .remove-link").add("click", function(el: HTMLElement){
+		const imgCont = el.closest(".lc-img");
+
+		(imgCont.querySelector(".lc-img__input") as HTMLInputElement).value = "";
+
+		new EventListener(imgCont.querySelector(".lc-img__input")).trigger("change");
+	});
+
+
+	new EventListener(".lc-img__input").add("change", function(el: HTMLInputElement){
+		const imgCont = el.closest(".lc-img");
+
+		imgCont.querySelector(".lc-img__img")?.remove();
+
+		if (el.files.length){
+			const reader = new FileReader(),
+				img: HTMLImageElement = document.createElement("img");
+
+			reader.onload = function(event: ProgressEvent<FileReader>){
+				img.setAttribute("src", event.target.result as string);
+
+				img.classList.add("lc-img__img");
+
+				imgCont.appendChild(img);
+			}
+
+			reader.readAsDataURL(el.files[0]);
+		}
+	});
+});

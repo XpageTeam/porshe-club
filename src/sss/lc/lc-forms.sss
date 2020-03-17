@@ -1,0 +1,233 @@
+.lc-content
+	display: flex
+	padding: 35px 0 85px
+
+	&__img
+		width: 214px
+		flex: none
+		margin-right: 55px
+
+	&__form
+		flex: 1 1 auto
+
+		.default-input__input
+
+			&--file:disabled ~ *
+				display: none
+
+			&:disabled
+				display: none
+
+				~ .default-input
+					
+					&__error
+						display: none
+
+					&__text
+						order: -1
+
+					&__label
+						color: #393939
+						text-transform: uppercase
+						font-size: 12px
+
+						&::after
+							display: none
+
+.lc-img
+	position: relative
+	width: 100%
+	min-height: 216px
+	background: #000
+
+	&:hover &__label
+		opacity: 1
+
+	&__remove
+		position: absolute 0 0 * *
+		transform: translate(50%, -50%)
+		z-index: 5
+		transition: opacity .3s ease
+
+		&:nth-last-child(2)
+			opacity: 0
+			pointer-events: none
+
+	&__img
+		min-height: inherit
+		object-fit: cover
+		object-position: center
+		margin: 0 !important
+	
+	&__input, &__label
+		position: absolute 0
+		min-height: 100%
+
+	&__input
+		opacity: 0
+		z-index: 1
+		size: 100%
+		cursor: pointer
+
+		&:disabled
+			pointer-events: none
+
+			~ label, ~ .lc-img__remove
+				display: none
+
+	&__label
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-direction: column
+		transition: opacity .3s ease
+
+		&:not(:last-child)
+			opacity: 0
+			background: rgba(0,0,0, .4)
+
+		&-btn
+			size: 39px
+			position: relative
+			background: var(--border-color)
+			transition: background-color .3s ease
+			border-radius: 50%
+			margin: 0 0 24px
+
+			&:after, &:before
+				content: ""
+				position: absolute
+				background-color: #fff
+				border-radius: 1px
+			
+			&:before
+				size: 14px 1px
+				top: calc(50% - 1px)
+				left: calc(50% - 7px)
+
+			&:after
+				size: 1px 14px
+				top: calc(50% - 7px)
+				left: calc(50% - 1px)
+
+		&-text
+			color: #393939
+			transition: color .3s ease
+			font-size: em(14)
+			
+	&:hover &__label-text, &:focus-within &__label-text
+		color: #fff
+	
+	&:hover &__label-btn, &:focus-within &__label-btn
+		background-color: var(--main-color)
+
+.default-input
+
+	&__req
+		position: absolute calc(100% + 12px) * * 0
+		font-size: 1em
+		letter-spacing: 0.04em
+		color: #242424
+
+	&__input
+
+		&_filetext
+			display: flex
+			align-items: flex-end
+
+	&__label
+
+		&--file
+			flex: none
+			margin-left: 21px
+			position: static
+			background: var(--main-color)
+			border-radius: 5px
+			letter-spacing: 0.04em
+			padding: 14px 25px 15px
+
+.remove-link
+	cursor: pointer
+	size: 36px
+	position: relative
+	transform: rotateZ(45deg)
+	display: block
+	background-color: var(--border-color)
+	border-radius: 50%
+
+	&:hover
+		background-color: var(--main-color)
+
+	&::after, &::before
+		content: ""
+		position: absolute
+		background-color: #fff
+		border-radius: 1px
+			
+	&:before
+		size: 10px 1px
+		top: calc(50% - 1px)
+		left: calc(50% - 5px)
+
+	&:after
+		size: 1px 10px
+		top: calc(50% - 5px)
+		left: calc(50% - 1px)
+
+
+.lc-project
+	position: relative
+
+	&__remove
+		position: absolute 0 0 * *
+
+.add-project
+	display: flex
+	justify-content: center
+	align-items: center
+	padding: 19px 20px 24px
+	background: var(--border-color)
+
+	&__btn
+		position: relative
+		size: 39px
+		background: #393939
+		border-radius: 50%
+		margin-right: 23px
+
+		&:after, &:before
+			content: ""
+			position: absolute
+			background-color: #fff
+			border-radius: 1px
+		
+		&:before
+			size: 14px 1px
+			top: calc(50% - 1px)
+			left: calc(50% - 7px)
+
+		&:after
+			size: 1px 14px
+			top: calc(50% - 7px)
+			left: calc(50% - 1px)
+
+
+@media (max-width: 1000px)
+	.lc-content
+		padding: 30px 0 50px
+
+		&__img
+			width: 180px
+			margin-right: 20px
+
+	.lc-img
+		min-height: 180px
+
+@media (max-width: 660px)
+	.lc-content
+		display: block
+
+		&__img
+			width: 100%
+			min-height: 0
+			margin: 0 0 20px
