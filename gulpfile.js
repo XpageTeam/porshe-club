@@ -127,7 +127,7 @@ gulp.task('imagemin', () =>
 
 
 gulp.task("deploy:css", () => 
-	gulp.src("docs/css/*.*", {since: gulp.lastRun("postcss")})
+	gulp.src("docs/css/*.*")
 		.pipe(server_conn.dest(remotePathCss))
 );
 

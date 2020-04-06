@@ -40,6 +40,9 @@
 	min-height: 216px
 	background: #000
 
+	.forms__input--file-support
+		display: none
+
 	&:hover &__label
 		opacity: 1
 
@@ -58,6 +61,9 @@
 		object-fit: cover
 		object-position: center
 		margin: 0 !important
+
+		~ .lc-img__img
+			display: none
 	
 	&__input, &__label
 		position: absolute 0

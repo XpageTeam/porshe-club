@@ -4,28 +4,61 @@ import Element from "./xpage/Element";
 import EventListener from "./xpage/EventListener";
 
 domReady(() => {
-	App.each(".default-input__input--file", (el: HTMLInputElement) => {
-		const textInput = new Element(el).closest(".default-input")
-							.find(".default-input__input[type='text']").getHTMLElement(0);
+	App.each(".default-input__input--file", observerFileInput);
 
-		new EventListener(textInput).add("click", (input: HTMLInputElement) => {
-			el.click()
-		})
+	const obsConfig: MutationObserverInit = {
+		childList: true,
+		subtree: true
+	};
 
-		new EventListener(el).add("change", (el: HTMLInputElement) => {
-			let files: Array<string> = [];
+	const callback = (mutationList: Array<MutationRecord>) => {
+		for (const mutation of mutationList)
+			mutation.addedNodes.forEach((node: HTMLElement) => {
+				if (node && node.classList && node.classList.contains("default-input__input--file"))
+					observerFileInput(node);
+				else if (node?.querySelectorAll && node.querySelectorAll(".default-input__input--file").length)
+					for (const input of App.transformNodeListToArray(node.querySelectorAll(".default-input__input--file")))
+						observerFileInput(input);
+			});
+	};
 
-			for (let i = 0; i < el.files.length; i++)
-				files.push(el.files[i].name)
+	const observer = new MutationObserver(callback);
 
-			if (!files.length)
-				(textInput as HTMLInputElement).value = ""
-			else{
-				(textInput as HTMLInputElement).value = files.join(", ")
-			}
-		})
-	})
+	observer.observe(document.body, obsConfig);
 });
+
+
+function observerFileInput(input: HTMLElement): void{
+	console.log(input);
+	const textInput = new Element(input).closest(".default-input")
+						.find(".default-input__input[type='text']").getHTMLElement(0);
+
+	new EventListener(textInput).add("click", (input: HTMLInputElement) => {
+		input.click()
+	})
+
+	new EventListener(input).add("change", (el: HTMLInputElement) => {
+		let files: Array<string> = [];
+
+		for (let i = 0; i < el.files.length; i++)
+			files.push(el.files[i].name)
+
+		if (!files.length)
+			(textInput as HTMLInputElement).value = ""
+		else{
+			(textInput as HTMLInputElement).value = files.join(", ")
+		}
+	})
+}
+
+
+
+
+
+
+
+
+
 
 domReady(() => {
 	new EventListener(".default-input__pass-toggler").add("click", (el: HTMLElement) => {
@@ -39,17 +72,54 @@ domReady(() => {
 	});
 });
 
+
+
+
+
+
+
+
+
+
+
+
 domReady(() => {
-	new EventListener(".lc-img .remove-link").add("click", function(el: HTMLElement){
+	App.each(".lc-img__input", observerImgInput);
+
+	const obsConfig: MutationObserverInit = {
+		childList: true,
+		subtree: true
+	};
+
+	const callback = (mutationList: Array<MutationRecord>) => {
+		for (const mutation of mutationList)
+			mutation.addedNodes.forEach((node: HTMLElement) => {
+				if (node?.classList?.contains("lc-img__input"))
+					observerImgInput(node);
+				else if (node?.querySelectorAll && node.querySelectorAll(".lc-img__input").length)
+					for (const input of App.transformNodeListToArray(node.querySelectorAll(".lc-img__input")))
+						observerImgInput(input);
+			});
+	};
+
+	const observer = new MutationObserver(callback);
+
+	observer.observe(document.body, obsConfig);
+	
+});
+
+function observerImgInput(input: HTMLElement): void{
+	const removeLink = input.closest(".lc-img").querySelector(".remove-link");
+
+	new EventListener(removeLink).add("click", function(el: HTMLElement){
 		const imgCont = el.closest(".lc-img");
 
-		(imgCont.querySelector(".lc-img__input") as HTMLInputElement).value = "";
+		(input as HTMLInputElement).value = "";
 
-		new EventListener(imgCont.querySelector(".lc-img__input")).trigger("change");
+		new EventListener(input).trigger("change");
 	});
 
-
-	new EventListener(".lc-img__input").add("change", function(el: HTMLInputElement){
+	new EventListener(input).add("change", function(el: HTMLInputElement){
 		const imgCont = el.closest(".lc-img");
 
 		imgCont.querySelector(".lc-img__img")?.remove();
@@ -69,4 +139,4 @@ domReady(() => {
 			reader.readAsDataURL(el.files[0]);
 		}
 	});
-});
+}
