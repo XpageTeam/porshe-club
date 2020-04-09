@@ -11,6 +11,12 @@ document.addEventListener("DOMContentLoaded", function(){
 	if (!is.mobile())
 		import("./404.js");
 
+	$("body").on("keyup", ".lc-about textarea", function(){
+		if(this.scrollTop > 0){
+			this.style.height = this.scrollHeight + "px";
+		  }
+	});
+
 	$(".fancybox").fancybox({
 		trapFocus: false,
 		touch: false,

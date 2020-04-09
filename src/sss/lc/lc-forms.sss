@@ -33,6 +33,21 @@
 
 						&::after
 							display: none
+		
+		textarea
+			max-height: 140px
+
+			&::-webkit-scrollbar
+				size: 10px
+
+				&-track, &-thumb
+					border-left: 7px solid var(--body-bg-color)
+
+				&-thumb
+					background-color: var(--main-color)
+
+				&-track
+					background-color: var(--second-color)
 
 .lc-img
 	position: relative
