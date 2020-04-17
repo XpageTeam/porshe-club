@@ -29,7 +29,6 @@ domReady(() => {
 
 
 function observerFileInput(input: HTMLElement): void{
-	console.log(input);
 	const textInput = new Element(input).closest(".default-input")
 						.find(".default-input__input[type='text']").getHTMLElement(0);
 
