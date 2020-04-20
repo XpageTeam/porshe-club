@@ -1,8 +1,10 @@
 import $ from "jquery";
 import is from "is_js";
+import Cookies from "js-cookie";
 
 window.jQuery = $
 window.$ = $
+window.Cookies = Cookies;
 
 require("./jquery.fancybox.js");
 

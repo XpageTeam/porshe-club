@@ -6,12 +6,31 @@ html(lang="ru")
 		include inc/head.pug
 		include inc/css.pug
 	body.main.loading
+		.loader
+			.loader__text
+				.loader__text-btn
+					include ../img/ico-headphones.svg
+				.loader__text-text Для взаимодействия 
+					br
+					| включите звук
+			video.loader__video(src="files/loading-video.mp4" playsinline="" muted="" autoplay="")
+			.loader__btn
+				.default-btn Войти на сайт
 		include inc/header.pug
 		main#content
 			picture.main-img
-				source(media="(min-width: 660px)" srcset="img/photos/main-big-img.jpg")
-				source(media="(max-width: 660px)" srcset="img/photos/main-small-img.png")
-				img
+				//- source(media="(min-width: 660px)" srcset="img/photos/main-big-img.jpg")
+				//- source(media="(max-width: 660px)" srcset="img/photos/main-small-img.png")
+				//- img
+				.main-img__video
+					.main-img__video-sound
+						.MuteButton_wrapper
+							span(class="MuteButton_bar MuteButton_bar-1 MuteButton_bar-unmute")
+							span(class="MuteButton_bar MuteButton_bar-2 MuteButton_bar-unmute")
+							span(class="MuteButton_bar MuteButton_bar-3 MuteButton_bar-unmute")
+							span(class="MuteButton_bar MuteButton_bar-4 MuteButton_bar-unmute")
+							span(class="MuteButton_bar MuteButton_bar-5 MuteButton_bar-unmute")
+					video(playsinline="" loop="" src="files/main-video-2.mp4")
 			.main-title
 				.main-title__text Porsche 
 					br

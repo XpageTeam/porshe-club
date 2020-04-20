@@ -3,6 +3,88 @@ import "./forms";
 import domReady from "./xpage/ready";
 import App from "./xpage/core";
 
+declare global {
+    interface Window {
+    	$: Function;
+		is: any;
+		Cookies: any;
+    }
+}
+
+domReady(() => {
+	const loaderVideo = document.querySelector(".loader__video"),
+		loader = document.querySelector(".loader");
+		
+	function mainVideoPlaying(){
+		const inBtn = document.querySelector(".loader__btn .default-btn"),
+		mainVideo = document.querySelector(".main-img__video video") as HTMLVideoElement;
+		
+		if (!mainVideo){
+			loader?.classList.add("js__hidden");
+			
+			return;
+		}
+		
+		if (inBtn)
+			inBtn.addEventListener("click", function(){
+				loader.classList.add("js__hidden");
+				
+				mainVideo.play();
+				
+				window.Cookies.set("loaderVisibled", "1");
+			});
+
+		mainVideo.addEventListener("timeupdate", function(){
+			console.log([this]);			
+		});
+		
+		const soundBtn = document.querySelector(".MuteButton_wrapper");
+		
+		if (!soundBtn)
+			return;
+
+		const spans = App.elementsGetter(".MuteButton_bar");
+
+		if (window.Cookies.get("videoSoundMuted") == "true")
+			for (const span of spans){
+				span.classList.remove("MuteButton_bar-unmute");
+				span.classList.add("MuteButton_bar-mute");
+			}
+		
+		soundBtn.addEventListener("click", function(){
+			if (!mainVideo.muted)
+				for (const span of spans){
+					span.classList.remove("MuteButton_bar-unmute");
+					span.classList.add("MuteButton_bar-mute");
+				}
+			else
+				for (const span of spans){
+					span.classList.add("MuteButton_bar-unmute");
+					span.classList.remove("MuteButton_bar-mute");
+				}
+			
+			mainVideo.muted = !mainVideo.muted;
+			
+			window.Cookies.set("videoSoundMuted", mainVideo.muted);
+
+			mainVideo.play();
+		});
+	}
+
+	if (!loaderVideo || !loader){
+		mainVideoPlaying();
+
+		return;
+	}
+	
+	setTimeout(function(){
+		document.body.classList.remove("loading");
+		document.body.classList.add("loaded");
+
+		mainVideoPlaying();
+	}, 1300);
+});
+	
 domReady(async () => {
 	let selects = App.transformNodeListToArray(document.querySelectorAll(".default-input__input--select"));
 
