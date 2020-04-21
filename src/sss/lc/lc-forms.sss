@@ -2,6 +2,9 @@
 	display: flex
 	padding: 35px 0 85px
 
+	&:not(:first-child)
+		border-top: 1px solid var(--border-color)
+
 	&__img
 		width: 214px
 		flex: none
@@ -12,6 +15,8 @@
 
 	&__form
 		flex: 1 1 auto
+		display: flex
+		flex-direction: column
 
 		.default-input__input
 
@@ -201,6 +206,15 @@
 
 .lc-project
 	position: relative
+	display: flex
+	flex-direction: column
+	flex: 1 1 auto
+
+	&__btns
+		padding: 25px 0 0
+		display: flex
+		justify-content: flex-end
+		margin: auto 0 0
 
 	&__remove
 		position: absolute 0 0 * *
