@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Медиа
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.inner-content
+				.inner-content__title
+					.wrapper
+						.title-block
+							h1.title-block__title Медиа
+				.inner-content__content
+					.wrapper
+						.gallery
+							- for (let j = 0; j < 5; j++)
+								- for (let i = 0; i < 3; i++)
+									if (i == 2)
+										.gallery__item.gallery__item--vertical
+											a.gallery-img(data-fancybox="gallery" href="img/photos/media-img-"+i+".jpg")
+												img(src="img/photos/media-img-"+i+".jpg")
+									else
+										.gallery__item
+											a.gallery-img(data-fancybox="gallery" href="img/photos/media-img-"+i+".jpg")
+												img(src="img/photos/media-img-"+i+".jpg")
+						.more-btn__container
+							a.default-btn.default-btn--more(href="#") 
+								| <!-- подставить класс default-btn--loading при загрузке -->
+								span.default-btn__text Показать ещё
+								include ../img/ico-update.svg
+		include inc/footer.pug
+		include inc/scripts.pug
