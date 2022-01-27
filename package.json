@@ -73,6 +73,6 @@
     "js-cookie": "^2.2.1",
     "postprocessing": "^6.10.0",
     "swiper": "^5.3.1",
-    "three": "^0.113.2"
+    "three": "^0.137.0"
   }
 }
